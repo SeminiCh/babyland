@@ -16,6 +16,7 @@ public class NannyServiceImpl implements NannyService {
 
     @Autowired
     private NannyRepo nannyRepo;
+    @Autowired
     private AgentService agentService;
     
     @Override
