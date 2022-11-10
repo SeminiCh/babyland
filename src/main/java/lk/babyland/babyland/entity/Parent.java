@@ -23,4 +23,6 @@ public class Parent {
     private String parentNic;
     private String parentBabyAge;
     private String parentNicCopy;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Nanny nanny;
 }

@@ -18,6 +18,13 @@ public class AgentController {
 
     @Autowired
     private AgentService agentService;
+
+    @PostMapping("")
+    public ResponseEntity<Iterable<Agent>> getAllAgents() {
+
+        return new ResponseEntity<>(agentService.allAgents(), HttpStatus.ACCEPTED);
+    }
+
     @PostMapping("save")
     public ResponseEntity<Optional<Agent>> saveAgent(@RequestBody CreateAgentDto agentInfo) {
 
