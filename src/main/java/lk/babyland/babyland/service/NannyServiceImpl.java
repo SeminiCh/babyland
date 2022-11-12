@@ -20,16 +20,13 @@ public class NannyServiceImpl implements NannyService {
     private AgentService agentService;
     
     @Override
-    public Iterable<Nanny> allNannies() {
-        
+    public Iterable<Nanny> allNannies() { 
         return nannyRepo.findAll();
     }
 
     @Override
-    public Optional<Nanny> getNannyById(Long id) {
-        
-        return nannyRepo.findById(id);
-
+    public Optional<Nanny> getNannyByNic(String nannyNic) {
+        return nannyRepo.findByNannyNic(nannyNic);
     }
 
     @Override
@@ -72,6 +69,8 @@ public class NannyServiceImpl implements NannyService {
         return Optional.of(nannyRepo.save(newNanny));
 
     }
+
+    
     
     
 }

@@ -7,7 +7,7 @@ import java.util.Optional;
 public interface AgentService {
     Iterable<Agent> allAgents();
 
-    Optional<Agent> getAgentByCompanyName(final String AgentCompanyName);
+    Optional<Agent> getAgentByCompanyName(final String agentCompanyName);
 
     Optional<Agent> saveAgent(final CreateAgentDto agent);
     
