@@ -19,6 +19,13 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+
+    @PostMapping("")
+    public ResponseEntity<Iterable<Customer>> getAllCustomers() {
+
+        return new ResponseEntity<>(customerService.allCustomers(), HttpStatus.ACCEPTED);
+    }
+
     @PostMapping("save")
     public ResponseEntity<Optional<Customer>> saveCustomer(@RequestBody CreateCustomerDto customerInfo) {
 
