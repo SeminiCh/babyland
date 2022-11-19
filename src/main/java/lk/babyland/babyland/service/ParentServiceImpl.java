@@ -3,12 +3,15 @@ package lk.babyland.babyland.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import lk.babyland.babyland.repo.ParentRepo;
 import lk.babyland.babyland.dto.CreateParentDto;
 import lk.babyland.babyland.entity.Nanny;
 import lk.babyland.babyland.entity.Parent;
 
+
+@Service
 public class ParentServiceImpl implements ParentService {
     
     @Autowired
