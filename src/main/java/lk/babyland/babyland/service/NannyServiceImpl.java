@@ -56,13 +56,20 @@ public class NannyServiceImpl implements NannyService {
         newNanny.setNannyReligion(nanny.getNannyReligion());
         newNanny.setNannyNationality(nanny.getNannyNationality());
         newNanny.setNannyLeavePreferences(nanny.getNannyLeavePreferences());
-        newNanny.setNannyLanguages(nanny.getNannyLanguages());
+        newNanny.setNannyLanguage1(nanny.getNannyLanguage1());
+        newNanny.setNannyLanguage2(nanny.getNannyLanguage2());
+        newNanny.setNannyLanguage3(nanny.getNannyLanguage3());
+        newNanny.setNannyEthniity(nanny.getNannyEthnicity());
+        newNanny.setNannyPreparingChildMeal(nanny.getNannyPreparingChildMeal());
         newNanny.setNannyQualification(nanny.getNannyQualification());
         newNanny.setNannyWorkingHours(nanny.getNannyWorkingHours());
         newNanny.setNannyQualificationFile(nanny.getNannyQualificationFile());
         newNanny.setNannyImage(nanny.getNannyImage());
         newNanny.setNannyVegetaian(nanny.getNannyVegetaian());
         newNanny.setNannyPetLover(nanny.getNannyPetLover());
+        newNanny.setAvailability(nanny.getAvailability());
+        newNanny.setNannyPrefferedDistrict1(nanny.getNannyPrefferedDistrict1());
+        newNanny.setNannyPrefferedDistrict2(nanny.getNannyPrefferedDistrict2());
         newNanny.setNannyDifferentlyAbledCare(nanny.getNannyDifferentlyAbledCare());
         newNanny.setAgent(foundAgent.get());
         

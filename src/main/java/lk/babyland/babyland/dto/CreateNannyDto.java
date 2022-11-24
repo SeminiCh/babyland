@@ -19,7 +19,9 @@ public class CreateNannyDto {
     private int nannyWeight;
     private int nannyHeight;
     private String nannyLeavePreferences;
-    private String nannyLanguages;
+    private String nannyLanguage1;
+    private String nannyLanguage2;
+    private String nannyLanguage3;
     private String nannyQualification;
     private String nannyWorkingHours;
     private String nannyNic;
@@ -28,7 +30,11 @@ public class CreateNannyDto {
     private String nannyVegetaian;
     private String nannyPetLover;
     private String nannyDifferentlyAbledCare;
+    private String nannyPreparingChildMeal;
     private String availability;
+    private String nannyEthnicity;
+    private String nannyPrefferedDistrict1;
+    private String nannyPrefferedDistrict2;
     public String agentCompanyName;
     
     

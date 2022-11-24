@@ -31,7 +31,7 @@ public class AgentServiceImpl implements AgentService {
         Optional<Agent> foundAgent = this.agentRepo.findByAgentCompanyName(agent.getAgentCompanyName());
         
         if(foundAgent.isPresent()) {
-            System.out.println("Agent is already Added");
+            System.out.println("Agent is Added");
             return Optional.empty();
 
             
@@ -40,7 +40,14 @@ public class AgentServiceImpl implements AgentService {
             newAgent.setAgentCompanyName(agent.getAgentCompanyName());
             newAgent.setAgentLicenceFile(agent.getAgentLicenceFile());
             newAgent.setAgentPassword (agent.getAgentPassword());
-
+            newAgent.setAgentEmployeeName(agent.getAgentEmployeeName());
+            newAgent.setAgentCompanyPhone(agent.getAgentCompanyPhone());
+            newAgent.setAgentPersonPhone(agent.getAgentPersonPhone());
+            newAgent.setAgentPersonEmail(agent.getAgentPersonEmail());
+            newAgent.setAgentPersonDesignation(agent.getAgentPersonDesignation());
+            newAgent.setAgentPersonImage(agent.getAgentPersonImage());
+            newAgent.setAgentPersonNic(agent.getAgentPersonNic());
+            
             return Optional.of(agentRepo.save(newAgent));
     }
     

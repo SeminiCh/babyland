@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import lk.babyland.babyland.repo.ParentRepo;
 import lk.babyland.babyland.dto.CreateParentDto;
+import lk.babyland.babyland.entity.Customer;
 import lk.babyland.babyland.entity.Nanny;
 import lk.babyland.babyland.entity.Parent;
 
@@ -19,6 +20,9 @@ public class ParentServiceImpl implements ParentService {
 
     @Autowired
     private NannyService nannyService;
+
+    @Autowired
+    private CustomerService customerService;
     
     @Override
     public Iterable<Parent> allParents() {
@@ -39,6 +43,13 @@ public class ParentServiceImpl implements ParentService {
             System.out.println("Not Found Nanny");
             return Optional.empty();
         }
+
+        Optional<Customer> foundCustomer = this.customerService.getCustomerByUsername(parent.getUsernameCustomer());
+
+        if(foundCustomer.isEmpty()) {
+            System.out.println("Not Found Customer");
+            return Optional.empty();
+        }
     
         
         Optional<Parent> foundParent = this.parentRepo.findByParentNic(parent.getParentNic());
@@ -51,6 +62,11 @@ public class ParentServiceImpl implements ParentService {
         Parent newParent = new Parent();
         newParent.setParentFullName(parent.getParentFullName());
         newParent.setParentAddress(parent.getParentAddress());
+        newParent.setParentOccupation(parent.getParentOccupation());
+        newParent.setParentCity(parent.getParentCity());
+        newParent.setParentBabbiesCount(parent.getParentBabbiesCount());
+        newParent.setParentImage(parent.getParentImage());
+        newParent.setParentBabySpecialCare(parent.getParentBabySpecialCare());
         newParent.setParentBabyAge(parent.getParentBabyAge());
         newParent.setParentNic(parent.getParentNic());
         newParent.setParentPhoneMoile(parent.getParentPhoneMoile());
@@ -58,6 +74,7 @@ public class ParentServiceImpl implements ParentService {
         newParent.setParentNicCopy(parent.getParentNicCopy());
 
         newParent.setNanny(foundNanny.get());
+        newParent.setCustomer(foundCustomer.get());
         
         return Optional.of(parentRepo.save(newParent));
 

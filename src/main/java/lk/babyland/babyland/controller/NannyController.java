@@ -27,8 +27,11 @@ public class NannyController {
         return new ResponseEntity<>(nannyService.allNannies(), HttpStatus.ACCEPTED);
     }
 
-    
+    @GetMapping ("{nannyNic}")
+    public ResponseEntity<Optional<Nanny>> getNannyByNic(@PathVariable String nannyNic) {
 
+        return new ResponseEntity<>(nannyService.getNannyByNic(nannyNic), HttpStatus.ACCEPTED);
+    }
 
     @PostMapping("save")
     public ResponseEntity<Optional<Nanny>> saveNanny(@RequestBody CreateNannyDto nannyInfo) {

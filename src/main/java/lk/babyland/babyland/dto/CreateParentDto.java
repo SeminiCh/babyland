@@ -12,11 +12,17 @@ import lombok.*;
 public class CreateParentDto {
     private String parentFullName;
     private String parentRelationshipToBaby;
+    private String parentOccupation;
     private String parentAddress;
+    private String parentCity;
     private String parentPhoneMoile;
     private String parentNic;
+    private String parentBabbiesCount;
+    private String parentImage;
+    private String parentBabySpecialCare;
     private String parentBabyAge;
     private String parentNicCopy;
 
     private String nannyNic;
+    private String usernameCustomer;
 }
