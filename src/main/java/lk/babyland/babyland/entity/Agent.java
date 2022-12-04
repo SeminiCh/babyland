@@ -16,13 +16,19 @@ public class Agent {
 
     private String agentCompanyName;
     private String agentPassword;
+    @Column(name = "agentLiFile", columnDefinition = "longtext")
+    private String agentLiFile;
+    @Column(name = "agentOfficerImg", columnDefinition = "longtext")
+    private String agentOfficerImg;
     private String agentLicenceFile;
+
     private String agentEmployeeName;
     private String agentCompanyPhone;
     private String agentPersonPhone;
     private String agentPersonEmail;
     private String agentPersonDesignation;
     private String agentPersonNic;
+    private String agentCompanyAddress;
     private String agentPersonImage;
 
 

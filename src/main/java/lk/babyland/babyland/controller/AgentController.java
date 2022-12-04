@@ -20,8 +20,7 @@ public class AgentController {
     private AgentService agentService;
 
     @PostMapping("")
-    public ResponseEntity<Iterable<Agent>> getAllAgents() {
-
+    public ResponseEntity<Iterable<Agent>> getAllAgents(){
         return new ResponseEntity<>(agentService.allAgents(), HttpStatus.ACCEPTED);
     }
 

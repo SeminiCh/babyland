@@ -1,11 +1,14 @@
 package lk.babyland.babyland.controller;
 import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import lk.babyland.babyland.dto.CreateNannyDto;
+import lk.babyland.babyland.dto.DeleteNannyDto;
+import lk.babyland.babyland.dto.UpdateNannyDto;
 import lk.babyland.babyland.entity.Nanny;
 import lk.babyland.babyland.service.NannyService;
 
@@ -42,6 +45,16 @@ public class NannyController {
             return new ResponseEntity<>(this.nannyService.saveNanny(nannyInfo), HttpStatus.CREATED);
         }
         return new ResponseEntity<>(this.nannyService.saveNanny(nannyInfo), HttpStatus.BAD_REQUEST);
+    }
+
+    @PutMapping("update/{nannyNic}")
+    public ResponseEntity<Nanny> updateNanny(@RequestBody UpdateNannyDto nannyInfo) {
+        return new ResponseEntity<>(this.nannyService.updateNannyById(nannyInfo), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("delete/{nannyNic}")
+    public ResponseEntity<Boolean> removeNanny(@RequestBody DeleteNannyDto nannyNic) {
+        return new ResponseEntity<>(this.nannyService.removeNannyByNannyNIC(nannyNic), HttpStatus.ACCEPTED);
     }
     
 }

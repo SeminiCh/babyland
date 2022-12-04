@@ -39,6 +39,10 @@ public class Nanny {
     private String nannyEthniity;
     private String nannyPrefferedDistrict1;
     private String nannyPrefferedDistrict2;
+    @Column(name = "nannyImg", columnDefinition = "longtext")
+    private String nannyImg;
+    @Column(name = "nannyQulFile", columnDefinition = "longtext")
+    private String nannyQulFile;
     private String nannyDifferentlyAbledCare;
     @ManyToOne(fetch = FetchType.EAGER)
     private Agent agent;

@@ -38,14 +38,15 @@ public class AgentServiceImpl implements AgentService {
         }
         Agent newAgent = new Agent();
             newAgent.setAgentCompanyName(agent.getAgentCompanyName());
-            newAgent.setAgentLicenceFile(agent.getAgentLicenceFile());
             newAgent.setAgentPassword (agent.getAgentPassword());
             newAgent.setAgentEmployeeName(agent.getAgentEmployeeName());
             newAgent.setAgentCompanyPhone(agent.getAgentCompanyPhone());
             newAgent.setAgentPersonPhone(agent.getAgentPersonPhone());
             newAgent.setAgentPersonEmail(agent.getAgentPersonEmail());
             newAgent.setAgentPersonDesignation(agent.getAgentPersonDesignation());
-            newAgent.setAgentPersonImage(agent.getAgentPersonImage());
+            newAgent.setAgentLiFile(agent.getAgentLiFile());
+            newAgent.setAgentOfficerImg(agent.getAgentOfficerImg());
+            newAgent.setAgentCompanyAddress(agent.getAgentCompanyAddress());
             newAgent.setAgentPersonNic(agent.getAgentPersonNic());
             
             return Optional.of(agentRepo.save(newAgent));

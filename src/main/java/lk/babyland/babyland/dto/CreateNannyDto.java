@@ -26,7 +26,8 @@ public class CreateNannyDto {
     private String nannyWorkingHours;
     private String nannyNic;
     private String nannyQualificationFile;
-    private String nannyImage;
+    private String nannyImg;
+    private String nannyQulFile;
     private String nannyVegetaian;
     private String nannyPetLover;
     private String nannyDifferentlyAbledCare;
@@ -36,7 +37,7 @@ public class CreateNannyDto {
     private String nannyPrefferedDistrict1;
     private String nannyPrefferedDistrict2;
     public String agentCompanyName;
-    
+ 
     
     
 }

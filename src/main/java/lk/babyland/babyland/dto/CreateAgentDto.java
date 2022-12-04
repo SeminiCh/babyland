@@ -14,12 +14,13 @@ import lombok.*;
 public class CreateAgentDto {
     private String agentCompanyName;
     private String agentPassword;
-    private String agentLicenceFile;
+    private String agentLiFile;
     private String agentEmployeeName;
     private String agentCompanyPhone;
     private String agentPersonPhone;
     private String agentPersonEmail;
     private String agentPersonDesignation;
     private String agentPersonNic;
-    private String agentPersonImage;
+    private String agentCompanyAddress;
+    private String agentOfficerImg;
 }
