@@ -24,6 +24,7 @@ public class NannyController {
     @Autowired
     private NannyService nannyService;
 
+
     @PostMapping("")
     public ResponseEntity<Iterable<Nanny>> getAllNannies() {
 
@@ -35,6 +36,13 @@ public class NannyController {
 
         return new ResponseEntity<>(nannyService.getNannyByNic(nannyNic), HttpStatus.ACCEPTED);
     }
+
+    @GetMapping ("Yes")
+    public ResponseEntity<Optional<Nanny>> getNannyByAvailability(@PathVariable String availability) {
+
+        return new ResponseEntity<>(nannyService.getNannyByAvailability(availability), HttpStatus.ACCEPTED);
+    }
+
 
     @PostMapping("save")
     public ResponseEntity<Optional<Nanny>> saveNanny(@RequestBody CreateNannyDto nannyInfo) {

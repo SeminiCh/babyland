@@ -33,6 +33,11 @@ public class NannyServiceImpl implements NannyService {
     }
 
     @Override
+    public Optional<Nanny> getNannyByAvailability(String availability) {
+        return nannyRepo.findByAvailability("Yes");
+    }
+
+    @Override
     public Optional<Nanny> saveNanny(CreateNannyDto nanny) {
 
         Optional<Agent> foundAgent = this.agentService.getAgentByCompanyName(nanny.getAgentCompanyName());
@@ -145,6 +150,8 @@ public class NannyServiceImpl implements NannyService {
         return true;
 
     }
+
+    
 
     
     

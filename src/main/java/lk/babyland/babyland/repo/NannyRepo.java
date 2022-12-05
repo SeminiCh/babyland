@@ -9,5 +9,7 @@ import java.util.Optional;
 
 public interface NannyRepo extends CrudRepository <Nanny, Long> {
     Optional<Nanny> findByNannyNic(final String nannyNic);
+
+    Optional<Nanny> findByAvailability(String availability);
     
 }

@@ -13,6 +13,8 @@ public interface NannyService {
 
     Optional<Nanny> getNannyByNic(final String nannyNic);
 
+    Optional<Nanny> getNannyByAvailability(final String availability);
+
     Optional<Nanny> saveNanny(final CreateNannyDto nanny);
 
     Nanny updateNannyById(final UpdateNannyDto updatedNanny);
