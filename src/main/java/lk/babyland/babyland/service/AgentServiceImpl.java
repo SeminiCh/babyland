@@ -51,5 +51,15 @@ public class AgentServiceImpl implements AgentService {
             
             return Optional.of(agentRepo.save(newAgent));
     }
+
+    @Override
+    public Optional<Agent> removeAgentByAgentCompanyName(String agentCompanyName) {
+        Optional<Agent> foundAgent = this.getAgentByCompanyName(agentCompanyName);
+        if(foundAgent.isEmpty()) {
+            return Optional.empty();
+        }
+        agentRepo.delete(foundAgent.get());
+        return foundAgent;
+    }
     
 }

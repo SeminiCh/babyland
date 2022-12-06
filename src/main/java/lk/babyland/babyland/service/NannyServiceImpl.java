@@ -4,7 +4,6 @@ import lk.babyland.babyland.entity.Nanny;
 import lk.babyland.babyland.repo.NannyRepo;
 import lk.babyland.babyland.entity.Agent;
 import lk.babyland.babyland.dto.CreateNannyDto;
-import lk.babyland.babyland.dto.DeleteNannyDto;
 import lk.babyland.babyland.dto.UpdateNannyDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -132,25 +131,18 @@ public class NannyServiceImpl implements NannyService {
         return this.nannyRepo.save(newNanny);
     }
 
-
     @Override
-    public Boolean removeNannyByNannyNIC(DeleteNannyDto nannyDto) {
-        Optional<Nanny> foundNanny = this.nannyRepo.findByNannyNic(nannyDto.getNannyNic());
-
+    public Optional<Nanny> removeNannyByNannyNIC(String nannyNic) {
+        Optional<Nanny> foundNanny = this.getNannyByNic(nannyNic);
         if(foundNanny.isEmpty()) {
-            return false;
+            return Optional.empty();
         }
-
-        try {
-            this.nannyRepo.delete(foundNanny.get());
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-
-        return true;
-
+        nannyRepo.delete(foundNanny.get());
+        return foundNanny;
     }
+
+
+    
 
     
 

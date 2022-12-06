@@ -10,5 +10,7 @@ public interface AgentService {
     Optional<Agent> getAgentByCompanyName(final String agentCompanyName);
 
     Optional<Agent> saveAgent(final CreateAgentDto agent);
+
+    Optional <Agent> removeAgentByAgentCompanyName (String agentCompanyName);
     
 }

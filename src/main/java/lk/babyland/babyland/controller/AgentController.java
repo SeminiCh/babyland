@@ -34,5 +34,16 @@ public class AgentController {
         }
         return new ResponseEntity<>(this.agentService.saveAgent(agentInfo), HttpStatus.BAD_REQUEST);
     }
+
+    @DeleteMapping("delete/{agentCompanyName}")
+    public ResponseEntity<Optional<Agent>> removeAgentByAgentCompanyName(@PathVariable String agentCompanyName) {
+        Optional<Agent> deletedAgent = agentService.removeAgentByAgentCompanyName(agentCompanyName);
+
+        if(deletedAgent.isEmpty()) {
+            return new ResponseEntity<>(deletedAgent, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(deletedAgent, HttpStatus.ACCEPTED);
+    }
     
 }

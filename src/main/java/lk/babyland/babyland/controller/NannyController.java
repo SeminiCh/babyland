@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import lk.babyland.babyland.dto.CreateNannyDto;
-import lk.babyland.babyland.dto.DeleteNannyDto;
 import lk.babyland.babyland.dto.UpdateNannyDto;
 import lk.babyland.babyland.entity.Nanny;
 import lk.babyland.babyland.service.NannyService;
@@ -37,6 +36,17 @@ public class NannyController {
         return new ResponseEntity<>(nannyService.getNannyByNic(nannyNic), HttpStatus.ACCEPTED);
     }
 
+    @DeleteMapping("delete/{nannyNic}")
+    public ResponseEntity<Optional<Nanny>> removeNannyByNannyNic(@PathVariable String nannyNic) {
+        Optional<Nanny> deletedNanny = nannyService.removeNannyByNannyNIC(nannyNic);
+
+        if(deletedNanny.isEmpty()) {
+            return new ResponseEntity<>(deletedNanny, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(deletedNanny, HttpStatus.ACCEPTED);
+    }
+
     @GetMapping ("Yes")
     public ResponseEntity<Optional<Nanny>> getNannyByAvailability(@PathVariable String availability) {
 
@@ -60,9 +70,6 @@ public class NannyController {
         return new ResponseEntity<>(this.nannyService.updateNannyById(nannyInfo), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("delete/{nannyNic}")
-    public ResponseEntity<Boolean> removeNanny(@RequestBody DeleteNannyDto nannyNic) {
-        return new ResponseEntity<>(this.nannyService.removeNannyByNannyNIC(nannyNic), HttpStatus.ACCEPTED);
-    }
+    
     
 }
