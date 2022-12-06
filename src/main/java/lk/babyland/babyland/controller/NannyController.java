@@ -55,7 +55,7 @@ public class NannyController {
         return new ResponseEntity<>(this.nannyService.saveNanny(nannyInfo), HttpStatus.BAD_REQUEST);
     }
 
-    @PutMapping("update/{nannyNic}")
+    @PutMapping("")
     public ResponseEntity<Nanny> updateNanny(@RequestBody UpdateNannyDto nannyInfo) {
         return new ResponseEntity<>(this.nannyService.updateNannyById(nannyInfo), HttpStatus.CREATED);
     }
