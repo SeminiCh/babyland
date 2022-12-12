@@ -18,4 +18,5 @@ public class Customer {
     private String emailCustomer;
     private String passwordCustomer;
     
+    
 }
