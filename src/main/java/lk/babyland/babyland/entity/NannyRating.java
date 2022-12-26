@@ -20,11 +20,17 @@ public class NannyRating {
     private long id;
 
     private int ratingValue;
+    private int puntualityRating;
+    private int communicationRating;
+    private int kindnessRating;
+
 
     private String ratingComment;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Nanny nannyNic;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Customer usernameCustomer;
 
     
 }
