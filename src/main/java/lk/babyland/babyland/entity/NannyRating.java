@@ -28,9 +28,9 @@ public class NannyRating {
     private String ratingComment;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private Nanny nannyNic;
+    private Nanny nanny;
     @ManyToOne(fetch = FetchType.EAGER)
-    private Customer usernameCustomer;
+    private Customer customer;
 
     
 }

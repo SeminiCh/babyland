@@ -15,8 +15,6 @@ public class CreateNannyRating {
     private int puntualityRating;
     private int communicationRating;
     private int kindnessRating;
-
-
     private String ratingComment;
 
     private String nannyNic;

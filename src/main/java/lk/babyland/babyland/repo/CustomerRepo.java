@@ -9,5 +9,6 @@ import java.util.Optional;
 
 public interface CustomerRepo extends CrudRepository <Customer, Long> {
     Optional<Customer> findByUsernameCustomer (final String usernameCustomer);
+    Optional <Customer> findByUsernameCustomerAndPasswordCustomer(String usernameCustomer, String passwordCustomer);
     
 }

@@ -49,7 +49,7 @@ public class CustomerController {
         return new ResponseEntity<>(this.customerService.saveCustomer(customerInfo), HttpStatus.BAD_REQUEST);
     }
 
-    @GetMapping( value = "/getAllUsernames" , produces = APPLICATION_JSON_VALUE)
+    @GetMapping( "getAllUsernames")
     public List<GetUsernameDto> findUserNames(){
         List<GetUsernameDto> userNameList = new ArrayList<>();
         try {
