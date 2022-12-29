@@ -8,7 +8,7 @@ import lk.babyland.babyland.dto.CreateSuggestionDto;
 import lk.babyland.babyland.entity.Suggestions;
 import lk.babyland.babyland.repo.SuggestionRepo;
 
-
+@Service
 public class SuggestionsServiceImpl implements SuggessionService{
 
     @Autowired

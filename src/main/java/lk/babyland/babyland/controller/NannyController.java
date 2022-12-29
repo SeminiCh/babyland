@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import lk.babyland.babyland.dto.CreateNannyDto;
 import lk.babyland.babyland.dto.UpdateNannyDto;
 import lk.babyland.babyland.entity.Nanny;
+import lk.babyland.babyland.repo.NannyRepo;
 import lk.babyland.babyland.service.NannyService;
 
 import java.util.Optional;
@@ -22,6 +23,9 @@ public class NannyController {
 
     @Autowired
     private NannyService nannyService;
+
+    @Autowired
+    private NannyRepo nannyRepo;
 
 
     @PostMapping("")
@@ -68,6 +72,11 @@ public class NannyController {
     @PutMapping("")
     public ResponseEntity<Nanny> updateNanny(@RequestBody UpdateNannyDto nannyInfo) {
         return new ResponseEntity<>(this.nannyService.updateNannyById(nannyInfo), HttpStatus.CREATED);
+    }
+
+    @GetMapping("noOfNannies")
+    public int getNannies() {
+        return (int) nannyRepo.count();
     }
 
     
