@@ -76,7 +76,8 @@ public class NannyController {
 
     @GetMapping("noOfNannies")
     public int getNannies() {
-        return (int) nannyRepo.count();
+        long count = nannyRepo.count();
+        return (int) (count);
     }
 
     

@@ -32,4 +32,10 @@ public class SuggestionController {
         }
         return new ResponseEntity<>(this.suggestionService.saveSuggestion(suggestionInfo) , HttpStatus.BAD_REQUEST);
     }
+
+    @PostMapping("")
+    public ResponseEntity<Iterable<Suggestions>> getAllSuggestins() {
+
+        return new ResponseEntity<>(suggestionService.allSuggestionss(), HttpStatus.ACCEPTED);
+    }
 }
