@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+import javax.management.relation.RelationNotFoundException;
+
 
 @Service
 public class NannyServiceImpl implements NannyService {
@@ -139,6 +141,18 @@ public class NannyServiceImpl implements NannyService {
         }
         nannyRepo.delete(foundNanny.get());
         return foundNanny;
+    }
+
+    @Override
+    public Nanny updateNanny(Nanny nanny, String nannyNic) {
+
+        Nanny existingNanny = nannyRepo.findByNannyNic(nannyNic).orElseThrow();
+
+        existingNanny.setAvailability(nanny.getAvailability());
+
+        nannyRepo.save(existingNanny);
+        return existingNanny;
+        
     }
 
 
