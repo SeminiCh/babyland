@@ -23,4 +23,5 @@ public class CreateAgentDto {
     private String agentPersonNic;
     private String agentCompanyAddress;
     private String agentOfficerImg;
+    private int agentRole;
 }

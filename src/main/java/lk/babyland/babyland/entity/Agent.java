@@ -30,6 +30,7 @@ public class Agent {
     private String agentPersonNic;
     private String agentCompanyAddress;
     private String agentPersonImage;
+    private int agentRole;
 
 
 }

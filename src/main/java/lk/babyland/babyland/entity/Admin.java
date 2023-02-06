@@ -9,15 +9,15 @@ import javax.persistence.*;
 @Getter
 @Setter
 
-public class Customer {
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String usernameCustomer;
-    private String emailCustomer;
-    private String passwordCustomer;
-    private int roleCustomer;
+    private String usernameAdmin;
+    private String emailAdmin;
+    private String passwordAdmin;
+    private int roleAdmin;
     
     
 }

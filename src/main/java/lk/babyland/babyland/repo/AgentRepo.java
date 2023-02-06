@@ -8,5 +8,5 @@ import java.util.Optional;
 @Repository
 public interface AgentRepo extends CrudRepository<Agent, Long>{
     Optional<Agent> findByAgentCompanyName(final String agentCompanyName);
-    
+    Optional <Agent> findByAgentCompanyNameAndAgentPassword(String agentCompanyName, String agentPassword);
 }

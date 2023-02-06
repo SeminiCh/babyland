@@ -48,6 +48,7 @@ public class AgentServiceImpl implements AgentService {
             newAgent.setAgentOfficerImg(agent.getAgentOfficerImg());
             newAgent.setAgentCompanyAddress(agent.getAgentCompanyAddress());
             newAgent.setAgentPersonNic(agent.getAgentPersonNic());
+            newAgent.setAgentRole(2);
             
             return Optional.of(agentRepo.save(newAgent));
     }

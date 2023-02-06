@@ -14,5 +14,6 @@ public class CreateCustomerDto {
     private String usernameCustomer;
     private String emailCustomer;
     private String passwordCustomer;
+    private int roleCustomer;
     
 }

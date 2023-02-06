@@ -40,6 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
             newCustomer.setUsernameCustomer(customer.getUsernameCustomer());
             newCustomer.setEmailCustomer(customer.getEmailCustomer());
             newCustomer.setPasswordCustomer (customer.getPasswordCustomer());
+            newCustomer.setRoleCustomer(1);
 
             return Optional.of(customerRepo.save(newCustomer));
         }
