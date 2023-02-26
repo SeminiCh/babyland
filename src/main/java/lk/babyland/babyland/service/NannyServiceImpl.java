@@ -152,6 +152,14 @@ public class NannyServiceImpl implements NannyService {
         
     }
 
+    @Override
+    public Nanny updateCompleteNanny(Nanny nanny, String nannyNic) {
+        Nanny existingNanny2 = nannyRepo.findByNannyNic(nannyNic).orElseThrow();
+        existingNanny2.setAvailability(nanny.getAvailability());
+        nannyRepo.save(existingNanny2);
+        return existingNanny2;
+    }
+
 
     
 

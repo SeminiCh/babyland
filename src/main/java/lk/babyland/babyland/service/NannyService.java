@@ -21,5 +21,6 @@ public interface NannyService {
     Optional<Nanny> removeNannyByNannyNIC(final String nannyNic);
 
     Nanny updateNanny( Nanny nanny, String nannyNic);
+    Nanny updateCompleteNanny( Nanny nanny, String nannyNic);
     
 }
