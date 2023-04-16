@@ -75,6 +75,9 @@ public class ParentServiceImpl implements ParentService {
         newParent.setParentOccupationFather(parent.getParentOccupationFather());
         newParent.setParentRelationshipToBaby(parent.getParentRelationshipToBaby());
         newParent.setParentNicCopy(parent.getParentNicCopy());
+        newParent.setParentMonth(parent.getParentMonth());
+        newParent.setParentYear(parent.getParentYear());
+        newParent.setParentTime(parent.getParentTime());
 
         newParent.setNanny(foundNanny.get());
         newParent.setCustomer(foundCustomer.get());

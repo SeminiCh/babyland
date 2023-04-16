@@ -34,4 +34,10 @@ public class NannyRatingController {
         }
         return new ResponseEntity<>(this.nannyRatingService.saveNannyRating(nannyRatingInfo), HttpStatus.BAD_REQUEST);
     }
+
+    @PostMapping("view")
+    public ResponseEntity<Iterable<NannyRating>> getAllNannyRating(){
+        return new ResponseEntity<> (nannyRatingService.allNannyRating(), HttpStatus.ACCEPTED);
+    }
+
 }

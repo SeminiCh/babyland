@@ -33,6 +33,9 @@ public class Parent {
     @Column(name = "parentNCopy", columnDefinition = "longtext")
     private String parentNCopy;
     private String parentBabySpecialCare;
+    private String parentMonth;
+    private String parentYear;
+    private String parentTime;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Nanny nanny;

@@ -25,6 +25,9 @@ public class CreateParentDto {
     private String parentBabySpecialCare;
     private String parentBabyAge;
     private String parentNicCopy;
+    private String parentMonth;
+    private String parentYear;
+    private String parentTime;
 
     private String nannyNic;
     private String usernameCustomer;
