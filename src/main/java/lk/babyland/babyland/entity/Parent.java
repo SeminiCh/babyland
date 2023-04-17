@@ -36,6 +36,7 @@ public class Parent {
     private String parentMonth;
     private String parentYear;
     private String parentTime;
+    private String parentStatus;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Nanny nanny;
