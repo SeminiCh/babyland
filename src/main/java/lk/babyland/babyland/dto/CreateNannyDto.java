@@ -36,6 +36,8 @@ public class CreateNannyDto {
     private String nannyEthnicity;
     private String nannyPrefferedDistrict1;
     private String nannyPrefferedDistrict2;
+    // private int nannySalary;
+
     public String agentCompanyName;
  
     

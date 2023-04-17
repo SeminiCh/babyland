@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lk.babyland.babyland.dto.CreateNannyDto;
+import lk.babyland.babyland.dto.UpdateNannyStatus;
 import lk.babyland.babyland.entity.Nanny;
 import lk.babyland.babyland.repo.NannyRepo;
 import lk.babyland.babyland.service.NannyService;
@@ -78,6 +79,11 @@ public class NannyController {
     @PutMapping("update/{nannyNic}")
     public ResponseEntity<Nanny> updateNanny(@PathVariable("nannyNic") String nannyNic, @RequestBody Nanny nanny) {
         return new ResponseEntity<Nanny>(nannyService.updateNanny(nanny, nannyNic), HttpStatus.OK);
+    }
+
+    @PutMapping("update/status")
+    public ResponseEntity<Nanny> updateNannyStatus(@RequestBody UpdateNannyStatus updateNannyStatus) {
+        return new ResponseEntity<Nanny>(nannyService.updateNannyStatus(updateNannyStatus), HttpStatus.OK);
     }
 
     @GetMapping("noOfNannies")

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import lk.babyland.babyland.dto.CreateNannyDto;
 import lk.babyland.babyland.dto.UpdateNannyDto;
+import lk.babyland.babyland.dto.UpdateNannyStatus;
 import lk.babyland.babyland.entity.Agent;
 import lk.babyland.babyland.entity.Nanny;
 import lk.babyland.babyland.repo.NannyRepo;
@@ -78,6 +79,7 @@ public class NannyServiceImpl implements NannyService {
         newNanny.setNannyPrefferedDistrict1(nanny.getNannyPrefferedDistrict1());
         newNanny.setNannyPrefferedDistrict2(nanny.getNannyPrefferedDistrict2());
         newNanny.setNannyDifferentlyAbledCare(nanny.getNannyDifferentlyAbledCare());
+        // newNanny.setNannySalary(nanny.getNannySalary());
         newNanny.setAgent(foundAgent.get());
         
         return Optional.of(nannyRepo.save(newNanny));
@@ -123,6 +125,7 @@ public class NannyServiceImpl implements NannyService {
         newNanny.setAvailability(nanny.getAvailability());
         newNanny.setNannyPrefferedDistrict1(nanny.getNannyPrefferedDistrict1());
         newNanny.setNannyPrefferedDistrict2(nanny.getNannyPrefferedDistrict2());
+        
         newNanny.setNannyDifferentlyAbledCare(nanny.getNannyDifferentlyAbledCare());
         newNanny.setAgent(foundAgent.get());
 
@@ -153,12 +156,24 @@ public class NannyServiceImpl implements NannyService {
     }
 
     @Override
+    public Nanny updateNannyStatus(UpdateNannyStatus updateNannyStatus) {
+        Nanny existingNanny = nannyRepo.findByNannyNic(updateNannyStatus.getNannyNic()).orElseThrow();
+
+        existingNanny.setAvailability(updateNannyStatus.getAvailability());
+
+        nannyRepo.save(existingNanny);
+        return existingNanny;
+    }
+
+    @Override
     public Nanny updateCompleteNanny(Nanny nanny, String nannyNic) {
         Nanny existingNanny2 = nannyRepo.findByNannyNic(nannyNic).orElseThrow();
         existingNanny2.setAvailability(nanny.getAvailability());
         nannyRepo.save(existingNanny2);
         return existingNanny2;
     }
+
+    
 
 
     

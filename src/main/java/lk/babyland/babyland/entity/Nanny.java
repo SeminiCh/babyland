@@ -39,6 +39,7 @@ public class Nanny {
     private String nannyEthniity;
     private String nannyPrefferedDistrict1;
     private String nannyPrefferedDistrict2;
+    // private int nannySalary;
     @Column(name = "nannyImg", columnDefinition = "longtext")
     private String nannyImg;
     @Column(name = "nannyQulFile", columnDefinition = "longtext")
