@@ -19,7 +19,7 @@ public class SpecialRequestController {
     @Autowired
     private SpecialService specialService;
 
-    @PostMapping(" ")
+    @GetMapping("")
     public ResponseEntity<Iterable<SpecialRequest>> getAllSpecialRequests(){
         return new ResponseEntity<> (specialService.allSpecialRequests(), HttpStatus.ACCEPTED);
 
